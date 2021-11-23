@@ -1,0 +1,135 @@
+#include <iostream>
+using namespace std;
+
+int check(int lenght) {
+    while (lenght <= 0) {
+        cout << "Какой в этом смысл?!" << endl;
+        cin >> lenght;
+    }
+    return lenght;
+}
+
+int main()
+{
+    setlocale(0, "");
+    short menu, lenght, vector, choise;
+    char symb;
+
+
+    cout << "Геометрические фигуры" << endl;
+    cout << "Выберите фигуру: " << endl;
+    cout << "[1] - Линия" << endl;
+    cout << "[2] - Квадрат" << endl;
+    cin >> menu;
+    short  i = 0;
+    switch (menu)
+    {
+
+    case 1:
+        cout << "Введите длину линии" << endl;
+        cin >> lenght;
+        lenght = check(lenght);
+        cout << endl;
+        cout << "Введите тип линии:\n [1] - горизонтальная\n [2] - вертикальная" << endl;
+        cin >> vector;
+        cout << endl;
+        cout << "Введите текстуру линии" << endl << endl;
+        cin >> symb;
+
+
+        switch (vector)
+        {
+        case 1: {
+            while (i < lenght)
+            {
+                cout << symb;
+                i++;
+            }
+        }
+              break;
+
+        case 2: {
+            while (i < lenght)
+            {
+                cout << symb << endl;
+                i++;
+            }
+        }
+              break;
+        default: {
+            cout << "исправь данные и попробуй снова" << endl;
+        }
+               break;
+        }
+        break;
+    case 2: {
+
+        cout << "Введите длину ребра квадрата" << endl << endl;
+        cin >> lenght;
+        lenght = check(lenght);
+        cout << "Введите текстуру квадрата" << endl << endl;
+        cin >> symb;
+        cout << "Выберите тип\n [1] Заполненный\n [2] Пустой" << endl << endl;
+        cin >> choise;
+        switch (choise)
+        {
+        case 1: {
+
+            while (i < lenght) {
+                short l = 0;
+                while (l < lenght)
+                {
+                    cout << symb << " ";
+                    l++;
+                }
+                cout << endl;
+                i++;
+            }
+        }
+              break;
+
+        case 2: {
+
+            while (i < lenght) {
+                short l = 0;
+
+                if (i == 0 || i == lenght - 1) {
+                    while (l < lenght)
+                    {
+                        cout << symb << " ";
+                        l++;
+                    }
+                    i++;
+                    cout << endl ;
+                }
+                else {
+                    cout << symb << " ";
+                    while (l < lenght - 2)
+                    {
+                        cout << "  ";
+                        l++;
+                    }
+                    cout << symb << "  ";
+                    cout << endl ;
+
+                    i++;
+                }
+            }
+            break;
+        }
+        default:
+            cout << "исправь данные и попробуй снова" << endl;
+              break;
+
+        }
+        break;
+    }
+
+        default:
+            cout << "исправь данные и попробуй снова" << endl;
+            break;
+    }
+
+    int _; cin >> _;
+    return 0;
+}
