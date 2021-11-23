@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(0, "");
+
+    short longOfLine;
+    cout << "Введите длину линии: ";
+    cin >> longOfLine;
+    char textureOfLine;
+    cout << "Введите текстуру линии: ";
+    cin >> textureOfLine;
+    cout << " " << endl;
+    cout << "Линия будет горизонтальная или вертикальная?" << endl;
+    cout << "1 - горизонтальная" << endl;
+    cout << "2 - вертикальная" << endl;
+    cout << "Выберите тип линии: " << endl;
+
+    short typeOfLine;
+    cin >> typeOfLine;
+
+    cout << " " << endl;
+
+    short i = 0;
+
+    switch (typeOfLine)
+    {
+    case 1:
+        cout << "Полюбуйся,что получилось" << endl;
+        while (i < longOfLine)
+        {
+            cout << textureOfLine;
+            i++;
+        }
+        break;
+
+    case 2:
+        cout << "Полюбуйся,что получилось" << endl;
+        while (i < longOfLine)
+        {
+            cout << textureOfLine << " " << endl;
+            i++;
+        }
+        break;
+
+
+    default:cout << "Измени значение и попробуй снова ";
+    }
+
+    int _; cin >> _;
+    return 0;
+}
